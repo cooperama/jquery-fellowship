@@ -66,7 +66,7 @@ const makeMiddleEarth = () => {
     //   3d. appends each land to the middle-earth section
     $section.append($article);
   }
-  console.log('makeMiddleEarth clicked!')
+
 };
 
 // COMMIT YOUR WORK
@@ -77,12 +77,22 @@ const makeMiddleEarth = () => {
 // ============
 const makeHobbits = () => {
 
-  console.log('Make hobbits');
+  console.log('Make hobbits, get Bilbo');
+
+  const $ulHobbitsList = $('<ul><ul>');
 
   // 1. display an unordered list of the hobbits in the shire.
+  for (let i = 0; i < hobbits.length; i++) {
 
-  // 2. give each hobbit a class of "hobbit"
+    const $liHobbits = $(`<li>${hobbits[i]}</li>`)
+   
+    // 2. give each hobbit a class of "hobbit"
+    $liHobbits.attr('class', 'hobbit');
+    $ulHobbitsList.append($liHobbits);
+    
+  }
 
+  $('#The-Shire').append($ulHobbitsList);
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
   // hint: get 'The-Shire' by using its id
@@ -96,6 +106,8 @@ const makeHobbits = () => {
 // Chapter 3
 // ============
 const keepItSecretKeepItSafe = () => {
+
+  console.log('Keeping it secret, keeping it safe');
 
   // 1. create an empty div with an id of 'the-ring'
 
@@ -115,6 +127,8 @@ const keepItSecretKeepItSafe = () => {
 // ============
 const makeBaddies = () => {
 
+  console.log('Making baddies, getting balrogs');
+
   // 1. display an unordered list of baddies in Mordor
 
   // 2. give each of the baddies a class of "baddy"
@@ -129,6 +143,8 @@ const makeBaddies = () => {
 // Chapter 5
 // ============
 const makeBuddies = () => {
+
+  console.log('Making buddies, getting Bombadil');
 
   // 1. create an aside tag and append it to middle-earth below mordor
 
