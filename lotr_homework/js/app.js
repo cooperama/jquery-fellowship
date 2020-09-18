@@ -62,7 +62,7 @@ const makeMiddleEarth = () => {
     $article.attr('id', `${lands[i]}`);
     //   3c. includes an h1 with the name of the land inside each land article
     const $h1 = $(`<h1>${lands[i]}</h1>`)
-    $article.text($h1);
+    $article.html($h1);
     //   3d. appends each land to the middle-earth section
     $section.append($article);
   }
@@ -110,9 +110,10 @@ const keepItSecretKeepItSafe = () => {
   console.log('Keeping it secret, keeping it safe');
 
   // 1. create an empty div with an id of 'the-ring'
-
+  const $divRing = $('<div id="ring"></div>');
   // 2. add the ring as a child of Frodo
-
+  const $frodo = $('.hobbit').eq(0);
+  $frodo.append($divRing);
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
