@@ -109,8 +109,12 @@ const keepItSecretKeepItSafe = () => {
   // 1. create an empty div with an id of 'the-ring'
   const $divRing = $('<div id="ring"></div>');
   // 2. add the ring as a child of Frodo
-  const $frodo = $('.hobbit').eq(0);
-  $frodo.append($divRing);
+  const $hobbits = $('.hobbit');
+  for (let i = 0; i < $hobbits.length; i++) {
+    if ($hobbits.eq(i).text() === 'Frodo Baggins') {
+      $hobbits.eq(i).append($divRing);
+    }
+  }
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
@@ -319,13 +323,14 @@ const weWantsIt = () => {
 // Chapter 13
 // ============
 const thereAndBackAgain = () => {
-
+  console.log("It's over... It's done...")
   // 1. remove Gollum and the Ring from the DOM
-
+  $('#gollum').remove();
   // 2. remove all the baddies from the DOM
-
+  $('#Mordor .baddy').remove();
   // 3. Move all the hobbits back to the shire
-
+  const $hobbits = $('.hobbit').remove();
+  $('#The-Shire').append($hobbits);
 };
 
 // COMMIT YOUR WORK
