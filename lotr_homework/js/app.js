@@ -191,7 +191,6 @@ const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
   const $buddyList = $('aside li');
-  console.log($buddyList)
   for (let i = 0; i < $buddyList.length; i++) {
     if ($buddyList.eq(i).text() === 'Strider') {
       $buddyList.eq(i).text('Aragorn');
@@ -209,14 +208,18 @@ const beautifulStranger = () => {
 // ============
 const forgeTheFellowShip = () => {
 
+  console.log('You have my sword.')
+
   // 1. create a new div with an id 'the-fellowship'
-
+  const $fellowshipDiv = $('<div id="the-fellowship"></div>');
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  $fellowshipDiv.append('<h1>The Fellowship</h1>')
   // 3. append the fellowship to middle-earth
-
+  $('#middle-earth').append($fellowshipDiv);
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
-
+  const $hobList = $('#Rivendell ul').remove();
+  const $budList = $('aside ul').remove();
+  $fellowshipDiv.append($budList).append($hobList);
 };
 
 // COMMIT YOUR WORK
