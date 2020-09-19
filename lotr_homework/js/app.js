@@ -242,7 +242,7 @@ const theBalrog = () => {
     }
   }
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
-  $('.the-white').css({'background':'white', 'border':'1px solid gray'})
+  // $('.the-white').css({'background':'white', 'border':'1px solid gray'})
 
 };
 
@@ -254,12 +254,23 @@ const theBalrog = () => {
 // ============
 const hornOfGondor = () => {
 
+  console.log('I would have followed you my brother... my captain... my king... ),:');
   // 1. create a pop-up alert that the horn of gondor has been blown
-
-  // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+  alert('The horn of Gondor has been blown.');
+    // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
+  const $buddies = $('#the-fellowship .buddy');
+  for (let i = 0; i < $buddies.length; i++) {
+    if ($buddies.eq(i).text() === 'Boromir') {
+      $buddies.eq(i).css('text-decoration', 'line-through');
+    }
+  }
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+  const $baddies = $('#Mordor .baddy');
+  for (let i = 0; i < $baddies.length; i++) {
+    if ($baddies.eq(i).text() === 'The Uruk-hai') {
+      $baddies.eq(i).remove();
+    }
+  }
 };
 
 // COMMIT YOUR WORK
