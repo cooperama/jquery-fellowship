@@ -79,15 +79,12 @@ const makeHobbits = () => {
 
   console.log('Make hobbits, get Bilbo');
 
-  const $ulHobbitsList = $('<ul><ul>');
+  const $ulHobbitsList = $('<ul></ul>');
 
   // 1. display an unordered list of the hobbits in the shire.
   for (let i = 0; i < hobbits.length; i++) {
-
-    const $liHobbits = $(`<li>${hobbits[i]}</li>`)
-   
     // 2. give each hobbit a class of "hobbit"
-    $liHobbits.attr('class', 'hobbit');
+    const $liHobbits = $(`<li class="hobbit">${hobbits[i]}</li>`)
     $ulHobbitsList.append($liHobbits);
     
   }
@@ -162,7 +159,7 @@ const makeBuddies = () => {
     $buddiesUl.append($buddy);
   }
   $aside.append($buddiesUl);
-  
+
 };
 
 // COMMIT YOUR WORK
@@ -173,8 +170,11 @@ const makeBuddies = () => {
 // ============
 const leaveTheShire = () => {
 
-  // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
+  console.log('Leaving the Shire');
 
+  // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
+  const $hobbitses = $('#The-Shire ul').remove();
+  $('#Rivendell').append($hobbitses);
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
 };
