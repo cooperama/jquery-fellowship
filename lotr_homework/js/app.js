@@ -280,11 +280,17 @@ const hornOfGondor = () => {
 // Chapter 11
 // ============
 const itsDangerousToGoAlone = () => {
-
+  console.log('I made a promise, Mr. Frodo...');
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-
+  const $fellows = $('#the-fellowship .hobbit');
+  for (let i = 0; i < $fellows.length; i++) {
+    if ($fellows.eq(i).text() === 'Frodo Baggins' || $fellows.eq(i).text() === "Samwise 'Sam' Gamgee") {
+      const $hobbit = $fellows.eq(i).remove();
+      $('#Mordor').append($hobbit);
+    }
+  }
   // 2. add a div with an id of 'mount-doom' to Mordor
-
+  $('#Mordor').append('<div id="mount-doom"></div>');
 };
 
 // COMMIT YOUR WORK
