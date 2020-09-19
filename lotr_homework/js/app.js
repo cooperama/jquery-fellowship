@@ -230,11 +230,19 @@ const forgeTheFellowShip = () => {
 // ============
 const theBalrog = () => {
 
+  console.log('Fly you fools.')
+
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
-
-  // 2. add a class "the-white" to this element
-
+  const $buddies = $('#the-fellowship .buddy');
+  for (let i = 0; i < $buddies.length; i++) {
+    if ($buddies.eq(i).text() === 'Gandalf the Grey') {
+      $buddies.eq(i).text('Gandalf the White');
+      // 2. add a class "the-white" to this element
+      $buddies.eq(i).addClass('the-white');
+    }
+  }
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
+  $('.the-white').css({'background':'white', 'border':'1px solid gray'})
 
 };
 
