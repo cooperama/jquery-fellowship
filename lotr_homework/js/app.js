@@ -125,7 +125,7 @@ const keepItSecretKeepItSafe = () => {
 // ============
 const makeBaddies = () => {
 
-  console.log('Making baddies, getting balrogs');
+  console.log('Make baddies, get balrogs');
 
   // 1. display an unordered list of baddies in Mordor
   const $baddiesUl = $('<ul></ul>');
@@ -146,7 +146,7 @@ const makeBaddies = () => {
 // ============
 const makeBuddies = () => {
 
-  console.log('Making buddies, getting Bombadil');
+  console.log('Make buddies, get Bombadil');
 
   // 1. create an aside tag and append it to middle-earth below mordor
   const $aside = $('<aside></aside>');
@@ -187,8 +187,16 @@ const leaveTheShire = () => {
 // ============
 const beautifulStranger = () => {
 
-  // 1. change the buddy 'Strider' textnode to "Aragorn"
+  console.log('Aragorn of Shmaragorn');
 
+  // 1. change the buddy 'Strider' textnode to "Aragorn"
+  const $buddyList = $('aside li');
+  console.log($buddyList)
+  for (let i = 0; i < $buddyList.length; i++) {
+    if ($buddyList.eq(i).text() === 'Strider') {
+      $buddyList.eq(i).text('Aragorn');
+    }
+  }
   // hint: You can get a list of elements by tag name, such as 'aside'
 
 };
